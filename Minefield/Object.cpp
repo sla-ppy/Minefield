@@ -5,7 +5,7 @@
 
 bool Object::GetActive()
 {
-    return m_bitFlags & OBF_ACTIVE;
+    return (m_bitFlags & OBF_ACTIVE) ? true : false;
 }
 
 void Object::SetActive(bool aActive)

@@ -59,7 +59,8 @@ void ObjectManager::AddMineObject(unsigned int aObjectId, float aPosition[3], in
     m_objects[m_numberOfObjects]->SetPosition(aPosition);
     static_cast<Mine*>(m_objects[m_numberOfObjects])->m_destructiveRadius = GetRandomFloat32_Range(10.0f, 100.0f);
     
-    bool active = (GetRandomFloat32() < 0.95f);
+    // FIXME: Every mine is deactivated, cant figure out how to solve this one, something has to do with getset
+    bool active = (GetRandomFloat32() > 0.95f);
     m_objects[m_numberOfObjects]->SetActive(active);
 
     if(GetRandomFloat32() < 0.1f)

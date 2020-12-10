@@ -45,7 +45,7 @@ float Mine::GetDistance(float aPositionA[3], float aPositionB[3])
 // Invulnerable mines do not take damage, but can be manually exploded if they are active
 void Mine::FindCurrentTargets()
 {
-	// If not active, it cant find the current targets
+	//If not active, it cant find the current targets
 	if (!GetActive())
 	{
 		return;

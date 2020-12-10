@@ -232,7 +232,8 @@ int main(int aArgc, char* aArgv[])
             }
         }
 
-		for(int i = 0; i < 10; i++)
+        // For some reason Active state isn't working as it should, meanwhile Invulnerablity is working as intended
+		for(int i = 0; i < 100; i++)
 		{
 			Object* pObject = ObjectManager::GetSingleton().GetObject(i);
 			if(pObject)
