@@ -24,3 +24,16 @@ bool Object::GetInvulnerable()
 {
     return (m_bitFlags & OBF_INVULNERABLE) ? true : false;
 }
+
+// FIXED: Object::SetInvulnerable(bool aInvulnerable) added, SetInvulnurable
+void Object::SetInvulnerable(bool aInvulnerable)
+{
+    if (aInvulnerable)
+    {
+        m_bitFlags &= OBF_INVULNERABLE;
+    }
+    else
+    {
+        m_bitFlags &= ~OBF_INVULNERABLE;
+    }
+}

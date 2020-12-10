@@ -1,17 +1,18 @@
 //
 // ZOS Software Engineer Applicant Test 2.3.0
 //
-// Submitted by: 
+// Submitted by: S4kyt
 //
-// Date:
+// Date: 2020.12.10
 //
-// Time taken:
+// Time taken: From: 2020.12.10 - 13:10
+//             Till: 
 //
 // Notes:
+// Dev Environment: Visual Studio Community 2019
+// Compiled and ran without upgrading to the latest SDK version, kept everything as is
 //
 //
-//
-// 
 //
 #include "stdafx.h"
 #ifdef _WIN32
@@ -182,6 +183,8 @@ public:
     }
 };
 
+// FIXED: All of the input parameters are hardcoded, they aren't random
+// They are supposed to be this way, I think
 int main(int aArgc, char* aArgv[])
 {
     int numberOfWorkerThreads = 16;

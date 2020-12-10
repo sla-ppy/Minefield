@@ -33,7 +33,8 @@ public:
 private:
 
     Mutex m_lock;
-    int m_numberOfObjects;
+    // signed - unsigned missmatch when m_numberOfObjects was being used
+    unsigned int m_numberOfObjects;
     Object* m_objects[cMaximumNumberOfObjects];
 
     int m_nextFindTargetIndex;
