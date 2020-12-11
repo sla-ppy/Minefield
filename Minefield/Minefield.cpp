@@ -11,9 +11,9 @@
 // Notes:
 // Dev Environment: Visual Studio Community 2019
 // Compiled and ran without upgrading to the latest SDK version, kept everything as is
-//
-//
-//
+// 
+// IMPORTANT: Searching for "S4kyt:" you can find every alternation with its corresponding objective so you can easly find out what I've altered.
+//            The reason being is that my first commit was kinda wacky and I've alerady worked a bit on it before uploading the base project, aka you cant see clearly what I've added or changed.
 #include "stdafx.h"
 #ifdef _WIN32
 #include "Windows.h"
@@ -183,8 +183,8 @@ public:
     }
 };
 
-// FIXED: All of the input parameters are hardcoded, they aren't random
-// They are supposed to be this way, I think
+// S4kyt: FIXED: All of the input parameters are hardcoded, they aren't random
+// S4kyt: They are supposed to be this way, I think
 int main(int aArgc, char* aArgv[])
 {
     int numberOfWorkerThreads = 16;
@@ -232,7 +232,7 @@ int main(int aArgc, char* aArgv[])
             }
         }
 
-        // For some reason Active state isn't working as it should, meanwhile Invulnerablity is working as intended
+        // S4kyt: For some reason Active state isn't working as it should, meanwhile Invulnerablity is working as intended
 		for(int i = 0; i < 100; i++)
 		{
 			Object* pObject = ObjectManager::GetSingleton().GetObject(i);

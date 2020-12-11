@@ -14,7 +14,7 @@ public:
     void SetActive(bool aActive);
 
     bool GetInvulnerable();
-    // FIXED: Was missing definition
+    // S4kyt: FIXED: Was missing definition
     void SetInvulnerable(bool aInvulnerable);
 
     virtual float* GetPosition() { return 0; }

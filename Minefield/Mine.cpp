@@ -38,14 +38,14 @@ float Mine::GetDistance(float aPositionA[3], float aPositionB[3])
 		distance += powf((aPositionA[i] - aPositionB[i]), 2.0f);
 	}
 
-	// FIXED: sqrtf instead of pow, compiler warning for possible loss of data from double to float conversaion
+	// S4kyt: FIXED: sqrtf instead of pow, compiler warning for possible loss of data from double to float conversaion
 	return sqrtf(distance);
 }
 
 // Invulnerable mines do not take damage, but can be manually exploded if they are active
 void Mine::FindCurrentTargets()
 {
-	//If not active, it cant find the current targets
+	// S4kyt: If not active, it cant find the current targets
 	if (!GetActive())
 	{
 		return;
@@ -64,13 +64,12 @@ void Mine::FindCurrentTargets()
 			break;
 		}
 
-		// Invulnerable mines aren't targetable
+		// TODO: Any other reasons to not add this object?
+		// S4kyt: Yes. Invulnerable mines aren't targetable
 		if (GetInvulnerable())
 		{
 			break;
 		}
-
-		//TODO: Any other reasons to not add this object?
 
 		m_targetList.push_back(pObject);
 	}
@@ -95,7 +94,7 @@ void Mine::Explode()
 
 	for (unsigned int i = 0; i < m_targetList.size(); ++i)
 	{
-		// Inactive mines cannot be triggered to explode. They can only explode from taking too much damage
+		// S4kyt: FIXED: Inactive mines cannot be triggered to explode. They can only explode from taking too much damage
 		if (!GetActive())
 		{
 			break;
@@ -117,15 +116,59 @@ void Mine::Explode()
 void Mine::TakeDamage(float aDamage)
 {
 
-	// FIXED: If an object is invulnerable, then TakeDamage wont happen to it
+	// S4kyt: FIXED: If an object is invulnerable, then TakeDamage wont happen to it
 	if (GetInvulnerable())
 	{
 		return;
 	}
 
+	/*
 	m_health -= aDamage;
 	if (m_health < 0.0f)
 	{
 		ObjectManager::GetSingleton().RemoveObject(GetObjectId());
 	}
+	*/
+
+
+	// S4kyt: This is how I solved the new feature:
+	// S-Z: If at least two enemy mines are destroyed, that same team gets to explode another of its mines. The team
+	// can continue to explode mines until less than two enemy mines are destroyed when exploding one of their mines.
+
+	int destroyCount;
+	int enemyDestroyCount;
+
+	bool lessThanTwoDestroyed = true;
+
+	int currentTeam = GetTeam();
+
+	m_health -= aDamage;
+
+	if (m_health < 0.0f)
+	{
+		destroyCount++;
+		ObjectManager::GetSingleton().RemoveObject(GetObjectId());
+
+		// If at least two enemy mines are destroyed
+		if (destroyCount >= 2)
+		{
+			// that same team gets to explode another of its mines
+			if (currentTeam == GetTeam())
+			{
+				do
+				{
+					enemyDestroyCount++;
+					// FIXME: not sure what this explodes?
+					Explode();
+				} while (enemyDestroyCount < 2);
+			}
+			// not the same team would explode its mines so we return
+			else
+			{
+				return;
+			}
+		}
+	}
 }
+
+
