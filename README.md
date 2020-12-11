@@ -10,14 +10,14 @@ The project includes my time (which I've also included here just in case) as wel
   - From 2020.12.10 - 13:21
   - Till: 2020.12.10 - 17:55
   
-  Total #1: 4 hours, 34 minutes
+  Total #1: 4 hours, 45 minutes
   
   - From 2020.12.11 - 09:28
-  - Till 2020.12.11 - 11:44
+  - Till 2020.12.11 - 11:57
   
-  Total #2: UNKNOWN
+  Total #2: 2 hours, 29 minutes
   
-  Overall Time = 
+  Overall Time = 7 hours, 14 minutes
 <br>
 <br>
 <br>
