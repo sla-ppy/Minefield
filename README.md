@@ -1,6 +1,12 @@
 ZOS C++ Programming Test 2.3.0
 
-## Total Time Spent:
+# IMPORTANT:
+The project includes my time (which I've also included here just in case) as well as some notes so you can more easly read through what and where I've changed.
+<br>
+<br>
+<br>
+
+# Total Time Spent:
   - From 2020.12.10 - 13:21
   - Till: 2020.12.10 - 17:55
   
@@ -12,18 +18,20 @@ ZOS C++ Programming Test 2.3.0
   Total #2: UNKNOWN
   
   Overall Time = 
+<br>
+<br>
+<br>
   
 # Workflow(In order):
 
-## I. Tried enabling /permissive- to check for any additional compile errors
-<br>
+### I. Tried enabling /permissive- to check for any additional compile errors
   
-## II. Wondered why nothing is random, and if it should or shouldn't be random, but turns out that I am not to modify the input values?
+### II. Wondered why nothing is random, and if it should or shouldn't be random, but turns out that I am not to modify the input values?
   - Do not modify the existing four command line input parameters used.  Feel free to add additional command line
       inputs if needed, but make sure they are not required.
 <br>
   
-## III. Performance:<br>
+### III. Performance:
   Check for "new" and "delete" oprerators, common mistake when programmers forget about that:
   <br>
 These two seem fine to me:
@@ -53,19 +61,26 @@ Answer might be because they aren't even activated whatsoever, which I couldn't 
 <br>
 <br>
 
-## IV. Error Handling:<br>
+### IV. Error Handling:
 Error handling could be used for: when there aren't new mines generated, lets not proceed then
 <br>
+<br>
 
-## V. SetActive():<br>
+### V. SetActive():
 Spent quite a bit of time on figuring out why mines aren't set to active, still unsure why not
+<br>
+<br>
 
-## VI. Custom Feature:<br>
-
+### VI. Custom Feature:
+Assignment:
 S-Z: If at least two enemy mines are destroyed, that same team gets to explode another of its mines. The team
      can continue to explode mines until less than two enemy mines are destroyed when exploding one of their mines.
      
-## VII. What Else I Would Have Done:
+This was documented as best I could inside the code.
+<br>
+<br>
+     
+### VII. What Else I Would Have Done:
 1. If statements should be used with an else so every time something we dont want to happen, we at least know its happening. Minimally displaying some kind of cout so we are aware of the issue
 
 2. Check through all of the cases we use thew "new" operator so no matter what "delete" operator gets called after we are done using the object, in all cases. Otherwise we are losing performance, leaking memory
