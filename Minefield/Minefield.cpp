@@ -3,10 +3,10 @@
 //
 // Submitted by: S4kyt
 //
-// Date: 2020.12.10
+// Date: 2020.12.10 - 2020.12.11
 //
-// Time taken: From: 2020.12.10 - 13:10
-//             Till: 
+// Time taken: 7 hours, 14 minutes
+//
 //
 // Notes:
 // Dev Environment: Visual Studio Community 2019
@@ -14,6 +14,9 @@
 // 
 // IMPORTANT: Searching for "S4kyt:" you can find every alternation with its corresponding objective so you can easly find out what I've altered.
 //            The reason being is that my first commit was kinda wacky and I've alerady worked a bit on it before uploading the base project, aka you cant see clearly what I've added or changed.
+//
+//
+//
 #include "stdafx.h"
 #ifdef _WIN32
 #include "Windows.h"
